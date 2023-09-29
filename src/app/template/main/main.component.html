@@ -1,15 +1,44 @@
 <mat-drawer-container class="" autosize>
     <mat-drawer #drawer class="sidenav" mode="side" opened>
-        <app-menu />
+        <app-autorizacion>
+            <ng-container autorizado>
+                <app-menu />
+            </ng-container>
+        </app-autorizacion>
     </mat-drawer>
 
     <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <a routerLink="/" mat-button color="primary">
-            <span class="app-title">Entregas a domicilio</span>
-        </a>
+        <app-autorizacion>
+            <ng-container autorizado>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <a routerLink="/" mat-button color="primary">
+                    <span class="app-title">Entregas a domicilio</span>
+                </a>
+            </ng-container>
+        </app-autorizacion>
+
+        <app-autorizacion>
+            <ng-container autorizado>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person</mat-icon>
+                    {{servicio.obtenerNombre()}}
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="servicio.cerrarSesion()" routerLink="/iniciarSesion"><mat-icon>logout</mat-icon> Cerrar
+                        sesión</button>
+                    <button mat-menu-item routerLink="/usuarios/vercuenta"><mat-icon>manage_accounts</mat-icon>Ver
+                        cuenta</button>                    
+                </mat-menu>
+            </ng-container>
+            <ng-container noAutorizado>
+                <!-- <a mat-button routerLink="iniciarSesion">
+                    <mat-icon>login</mat-icon>
+                    Iniciar sesion
+                </a> -->
+            </ng-container>
+        </app-autorizacion>
     </div>
     <div class="main">
         <div class="body">

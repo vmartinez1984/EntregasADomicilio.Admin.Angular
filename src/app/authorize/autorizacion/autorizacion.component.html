@@ -1,0 +1,2 @@
+<ng-content *ngIf="servicio.estaIniciadaLaSesion()" select="[autorizado]"/>
+<ng-content *ngIf="!servicio.estaIniciadaLaSesion()" select="[noAutorizado]"/>

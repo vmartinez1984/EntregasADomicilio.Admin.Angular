@@ -7,11 +7,15 @@ import { CategoriaService } from 'src/app/services/repositorios/categoria.servic
   styleUrls: ['./lista-de-categorias.component.css']
 })
 export class ListaDeCategoriasComponent {
+  estaCargando = false
   categorias: any[] = []
+
   constructor(private servicio: CategoriaService) {
+    this.estaCargando = true
     this.servicio.obtenerTodos().subscribe({
       next: (data) => {
         this.categorias = data
+        this.estaCargando = false
       }
     })
   }

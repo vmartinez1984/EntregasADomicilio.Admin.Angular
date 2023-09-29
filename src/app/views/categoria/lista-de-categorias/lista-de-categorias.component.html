@@ -1,5 +1,6 @@
 <div class="container-fluid">
-    <div class="card">
+    <mat-progress-bar mode="indeterminate" *ngIf="estaCargando"></mat-progress-bar>
+    <div class="card mt-2">
         <div class="card-header">
             <h1>Lista de categorias</h1>
         </div>
@@ -11,7 +12,7 @@
                         <th>Nombre</th>
                         <th>¿Está activo?</th>
                         <th>
-                            <button class="btn btn-primary text-white btn-sm">
+                            <button class="btn btn-primary text-white btn-sm" routerLink="/categorias/agregar">
                                 Agregar
                             </button>
                         </th>
@@ -23,9 +24,10 @@
                         <td>{{categoria.nombre}}</td>
                         <td>{{categoria.estaActivo}}</td>
                         <td>
-                            <button class="btn btn-warning text-white btn-sm">
+                            <a class="btn btn-warning text-white btn-sm"
+                                [routerLink]="['/categorias/editar', categoria.id]">
                                 Editar
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
