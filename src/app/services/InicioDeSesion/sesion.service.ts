@@ -4,42 +4,42 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SesionService {
-  role: any;
-  private readonly llaveToken = 'token'
-  private readonly llaveExpiracion = 'expiracion'
+  // role: any;
+  // private readonly llaveToken = 'token'
+  // private readonly llaveExpiracion = 'expiracion'
 
-  constructor() { }
+  // constructor() { }
 
-  public estaAutorizado(): boolean {
-    if (this.role) {
-      return this.obtenerRol() === this.role
-    } else {
-      return this.estaLogueado()
-    }
-  }
+  // public estaAutorizado(): boolean {
+  //   if (this.role) {
+  //     return this.obtenerRol() === this.role
+  //   } else {
+  //     return this.estaLogueado()
+  //   }
+  // }
 
-  obtenerRol(): string {
-    return "administrador"
-  }
+  // obtenerRol(): string {
+  //   return "administrador"
+  // }
 
-  estaLogueado() {
-    const token = localStorage.getItem(this.llaveToken)
-    if (!token)
-      return false
+  // estaLogueado() {
+  //   const token = localStorage.getItem(this.llaveToken)
+  //   if (!token)
+  //     return false
 
-    const expiracion = localStorage.getItem(this.llaveExpiracion)
-    const fechaDeExpiracion = new Date(expiracion!)
-    if (fechaDeExpiracion <= new Date()) {
-      this.cerrarSesion()
-      return false
-    }
+  //   const expiracion = localStorage.getItem(this.llaveExpiracion)
+  //   const fechaDeExpiracion = new Date(expiracion!)
+  //   if (fechaDeExpiracion <= new Date()) {
+  //     this.cerrarSesion()
+  //     return false
+  //   }
 
-    return true
-  }
+  //   return true
+  // }
 
-  cerrarSesion() {
-    localStorage.removeItem(this.llaveExpiracion)
-    localStorage.removeItem(this.llaveToken)
-  }
+  // cerrarSesion() {
+  //   localStorage.removeItem(this.llaveExpiracion)
+  //   localStorage.removeItem(this.llaveToken)
+  // }
 
 }

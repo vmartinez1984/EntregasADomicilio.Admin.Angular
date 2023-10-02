@@ -1,1 +1,14 @@
-<p>editar-categoria works!</p>
+<div class="container-sm mt-5">
+    <mat-card>
+        <mat-card-header>
+            <h2>Categoria</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <app-formulario-de-categoria (categoriaEmmit)="guardar($event)" [habilitarFormulario]="!estaCargando" [categoria]="categoria"/>
+        </mat-card-content>
+        <mat-card-footer>
+            <span *ngIf="estaCargando">Un momento por favor...</span>
+            <mat-progress-bar *ngIf="estaCargando" mode="indeterminate"/>
+        </mat-card-footer>
+    </mat-card>
+</div>

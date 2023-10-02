@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RepositorioService } from 'src/app/services/repositorio.service';
 
 @Component({
   selector: 'app-lista-de-platillos',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class ListaDePlatillosComponent {
 
+  constructor(private servicio: RepositorioService){
+    this.servicio.platillo.obtenerTodos().subscribe({
+      next:(data)=>{
+        console.log(data)
+      }
+    })
+  }
 }

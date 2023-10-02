@@ -1,1 +1,24 @@
-<p>formulario-de-categoria works!</p>
+<form [formGroup]="formGroup" (submit)="guardar()">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput type="text" autocomplete="off" />
+            <mat-error>El campo Nombre es requerido</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-checkbox formControlName="estaActivo">¿Está activo?</mat-checkbox>
+    </div>
+    <div class="row mb-1 mt-1">
+        <div class="col">
+            <a mat-button color="warn" routerLink="/categorias" [disabled]="!habilitarFormulario">
+                Cancelar
+            </a>
+        </div>
+        <div class="col">
+            <button mat-button color="primary" [disabled]="!habilitarFormulario">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>

@@ -7,7 +7,7 @@
         </app-autorizacion>
     </mat-drawer>
 
-    <div class="example-sidenav-content">
+    <div>
         <app-autorizacion>
             <ng-container autorizado>
                 <button type="button" mat-button (click)="drawer.toggle()">
@@ -40,10 +40,12 @@
             </ng-container>
         </app-autorizacion>
     </div>
+
     <div class="main">
         <div class="body">
             <router-outlet />
         </div>
-        <app-footer />
+            <app-footer />
     </div>
+
 </mat-drawer-container>
