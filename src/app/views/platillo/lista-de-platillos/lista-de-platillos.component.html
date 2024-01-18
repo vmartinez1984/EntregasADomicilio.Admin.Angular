@@ -1,1 +1,32 @@
-<p>lista-de-platillos works!</p>
+<div class="container">
+
+    <h2>Platillos</h2>
+    <a routerLink="/platillos/agregar">Agregar platillo</a>
+    <table [width]="'100%'">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Categoria</th>
+                <th>Nombre</th>
+                <th>$</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of platillos">
+                <td>{{item.id}}</td>
+                <td>{{item.categoria.nombre}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio | currency}}</td>
+                <td>
+                    <img [src]="obtenerUrl(item)" height="100px"/>
+                </td>
+                <td>
+                    <a [routerLink]="['/platillos','editar', item.id]">Editar</a> |
+                    <a>Borrar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

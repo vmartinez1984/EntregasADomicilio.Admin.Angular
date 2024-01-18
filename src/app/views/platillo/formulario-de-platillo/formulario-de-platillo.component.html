@@ -1,0 +1,60 @@
+<form [formGroup]="formGroup" (submit)="guardar()">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput type="text" autocomplete="off" />
+            <mat-error>El campo Nombre es requerido</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <input formControlName="descripcion" matInput type="text" autocomplete="off" />
+            <mat-error>La Descripción es requerido</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input formControlName="precio" matInput type="number" autocomplete="off" />
+            <mat-error>El Precio es requerido</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <app-agregar-imagen  (archivo)="agregarImagen($event)" [urlDeImagen]="urlDeLaImagen"/>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-select placeholder="Categorias" formControlName="categoriaId">
+                <mat-option *ngFor="let item of categorias" [value]="item.id">
+                    {{ item.nombre }}
+                </mat-option>
+            </mat-select>
+            <mat-error>Seleccione categoria</mat-error>
+        </mat-form-field>
+    </div>
+    <!-- <div class="row">
+        <mat-checkbox formControlName="estaActivo">¿Está activo?</mat-checkbox>
+    </div> -->
+    <div class="row mb-1 mt-1">
+        <div class="col">
+            <a mat-button color="warn" routerLink="/platillos" [disabled]="estaCargando">
+                Cancelar
+            </a>
+        </div>
+        <div class="col">
+            <button mat-button color="primary" [disabled]="estaCargando">
+                <div *ngIf="!estaCargando">
+                    Guardar
+                </div>
+                <div *ngIf="estaCargando">
+                    Un momento ...
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+            </button>
+        </div>
+    </div>
+</form>

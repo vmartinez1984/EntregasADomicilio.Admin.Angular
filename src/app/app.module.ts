@@ -29,6 +29,10 @@ import { FormularioContraseniaComponent } from './views/usuario/formulario-contr
 import { RestablecerContraseniaComponent } from './views/usuario/restablecer-contrasenia/restablecer-contrasenia.component';
 import { ActualizarContraseniaComponent } from './views/usuario/actualizar-contrasenia/actualizar-contrasenia.component';
 import { AutorizacionModule } from './authorize/autorizacion.module';
+import { FormularioDePlatilloComponent } from './views/platillo/formulario-de-platillo/formulario-de-platillo.component';
+import { AgregarPlatilloComponent } from './views/platillo/agregar-platillo/agregar-platillo.component';
+import { EditarPlatilloComponent } from './views/platillo/editar-platillo/editar-platillo.component';
+import { AgregarImagenComponent } from './utilidades/agregar-imagen/agregar-imagen.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,10 @@ import { AutorizacionModule } from './authorize/autorizacion.module';
     FormularioContraseniaComponent,
     RestablecerContraseniaComponent,
     ActualizarContraseniaComponent,
+    FormularioDePlatilloComponent,
+    AgregarPlatilloComponent,
+    EditarPlatilloComponent,
+    AgregarImagenComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +68,7 @@ import { AutorizacionModule } from './authorize/autorizacion.module';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AutorizacionModule,
   ],
   providers: [

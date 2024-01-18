@@ -10,6 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     MatProgressBarModule,
     MatCheckboxModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

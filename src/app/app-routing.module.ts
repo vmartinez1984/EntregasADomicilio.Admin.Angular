@@ -10,6 +10,8 @@ import { ListaDePedidosComponent } from './views/pedido/lista-de-pedidos/lista-d
 import { PerfilDeUsuarioComponent } from './views/usuario/perfil-de-usuario/perfil-de-usuario.component';
 import { EditarCategoriaComponent } from './views/categoria/editar-categoria/editar-categoria.component';
 import { AgregarCategoriaComponent } from './views/categoria/agregar-categoria/agregar-categoria.component';
+import { AgregarPlatilloComponent } from './views/platillo/agregar-platillo/agregar-platillo.component';
+import { EditarPlatilloComponent } from './views/platillo/editar-platillo/editar-platillo.component';
 
 const routes: Routes = [
   { path: '', component: BienvenidaComponent, canActivate: [Guardian] },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'categorias/agregar', component: AgregarCategoriaComponent, canActivate: [Guardian] },
   { path: 'categorias/editar/:id', component: EditarCategoriaComponent, canActivate: [Guardian] },
   { path: 'platillos', component: ListaDePlatillosComponent, canActivate: [Guardian] },
+  { path: 'platillos/agregar', component: AgregarPlatilloComponent, canActivate: [Guardian] },
+  { path: 'platillos/editar/:id', component: EditarPlatilloComponent, canActivate: [Guardian] },
   { path: 'usuarios', component: ListaDeUsuariosComponent, canActivate: [Guardian] },
   { path: 'usuarios/vercuenta', component: PerfilDeUsuarioComponent, canActivate: [Guardian] },
   { path: 'pedidos', component: ListaDePedidosComponent, canActivate: [Guardian] },
