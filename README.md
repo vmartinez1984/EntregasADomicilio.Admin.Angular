@@ -19,3 +19,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Se encapsulo en un módulo toda lo necesario para el inicio de sesión
 
+´´´
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+´´´
